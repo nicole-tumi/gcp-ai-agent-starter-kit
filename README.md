@@ -18,7 +18,8 @@
 | Ruta | Descripción |
 |------|-------------|
 | `Taller_URP_APP_DATA.ipynb` | Notebook Colab con todo el paso a paso para construir el agente. |
-| `Taller_URP_APP_DATA_CARGA.ipynb` | Notebook Colab opcional: crea las tablas de memoria en PostgreSQL y carga datos de prueba. |
+| `Taller_URP_APP_DATA_CARGA.ipynb` | Notebook Colab opcional: Carga datos de prueba en base de datos vectorial Elasticsearch. |
+| `data.csv` | Notebook Colab opcional: Datos de prueba para la base de datos vectorial. |
 | `Taller GenAI Crea tu primera aplicación.pdf` | Presentación del taller (16 slides). |
 | `docs/` | Carpeta de arquitectura  |
 | &nbsp;&nbsp;└ `arquitectura_overview.jpg` | Arquitectura de la solucion. |
