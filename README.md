@@ -9,7 +9,8 @@
 - Despliegue **Docker → Cloud Run (GCP)** y **UI React / Next.js en Vercel**
 
 > Este repositorio acompaña el taller dictado en la Universidad Ricardo Palma.  
-> El flujo completo explicado en almenos 2 horas, desde el notebook hasta producción.  
+> El flujo completo explicado en almenos 2 horas, desde el notebook hasta producción.
+> Taller completo: [![](https://markdown-videos.deta.dev/youtube/n1KShZnmcXM)](https://youtu.be/n1KShZnmcXM)
 
 ---
 
