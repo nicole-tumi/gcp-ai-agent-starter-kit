@@ -68,3 +68,4 @@ Si te interesa colaborar, aprender más o invitarme a dar una charla, puedes esc
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Miguel%20Cotrina-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/mcotrina/)
 
+> IA & Data con propósito
