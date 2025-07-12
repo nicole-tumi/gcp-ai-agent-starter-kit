@@ -1,0 +1,9 @@
+.env
+*.env
+secret.env
+apikey.txt
+*.key
+*.pem
+*.crt
+__pycache__/
+*.pyc

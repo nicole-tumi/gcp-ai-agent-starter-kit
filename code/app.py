@@ -1,3 +1,7 @@
+from dotenv import load_dotenv
+load_dotenv()
+
+
 from langchain_openai import ChatOpenAI
 import os
 from flask import Flask, jsonify, request
@@ -14,11 +18,11 @@ from langgraph.prebuilt import create_react_agent
 
 
 ## datos de trazabilidad
-os.environ["LANGSMITH_ENDPOINT"]="https://api.smith.langchain.com"
-os.environ["LANGCHAIN_API_KEY"] = "lsv2_pt...."
+os.environ["LANGSMITH_ENDPOINT"] = os.environ.get("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com")
+os.environ["LANGCHAIN_API_KEY"] = os.environ.get("LANGCHAIN_API_KEY", "")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_PROJECT"] = "gcpaiagent"
-os.environ["OPENAI_API_KEY"] ="sk-proj....."
+os.environ["LANGCHAIN_PROJECT"] = os.environ.get("LANGCHAIN_PROJECT", "gcpaiagent")
+os.environ["OPENAI_API_KEY"] = os.environ.get("OPENAI_API_KEY", "")
 
 
 app = Flask(__name__)
@@ -29,20 +33,21 @@ def main():
     id_agente = request.args.get('idagente')
     msg = request.args.get('msg')
     #datos de configuracion
-    DB_URI = os.environ.get(
-        "DB_URI",
-        "postgresql://usuario:password@0.0.0.0:5432/basededatos?sslmode=disable"
-    )
+    DB_URI = os.environ.get("DB_URI", "")
+    es_user = os.environ.get("es_user", "")
+    es_password = os.environ.get("es_password", "")
+
     connection_kwargs = {
         "autocommit": True,
         "prepare_threshold": 0,
     }
     db_query = ElasticsearchStore(
-        es_url="http://0.0.0.0:9200",
-        es_user="elastic",
-        es_password="clave",
+        es_url="http://35.193.54.75:9200",  # o la IP pública si usas conexión externa
+        es_user=es_user,
+        es_password=es_password,
         index_name="lg-proddata",
-        embedding=OpenAIEmbeddings())
+        embedding=OpenAIEmbeddings()
+)
 
     # Herramienta RAG
     retriever = db_query.as_retriever()
